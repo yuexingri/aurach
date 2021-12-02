@@ -3,6 +3,8 @@
 
 #[macro_use] extern crate rocket;
 pub mod controller;
+pub mod service;
+pub mod model;
 use storage::StorageObject;
 
 
