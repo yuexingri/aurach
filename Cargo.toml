@@ -7,4 +7,4 @@ edition = "2018"
 
 [dependencies]
 rocket = "0.4.10"
-controller = { path = "controller", version = "0.1.0" }
+#controller = { path = "controller", version = "0.1.0" }
