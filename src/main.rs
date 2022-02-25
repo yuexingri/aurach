@@ -2,13 +2,9 @@
 #![feature(in_band_lifetimes)]
 
 #[macro_use] extern crate diesel;
-#[macro_use] extern crate dotenv;
 #[macro_use] extern crate rocket;
 
-use diesel::prelude::*;
-use diesel::QueryDsl;
-use rocket::Request;
-use storage::StorageObject;
+// use storage::StorageObject;
 
 mod configuration;
 mod controller;

@@ -1,6 +1,5 @@
 use crate::configuration::response::{ApiError, ApiResponse};
 use crate::db::mysql_db_pool;
-use crate::model::user_model::User;
 use crate::service::user_service::get_user_by_id;
 
 #[get("/<id>")]

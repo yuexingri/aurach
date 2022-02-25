@@ -49,6 +49,7 @@ pub fn fail(code: u16, error: String, message: String) -> ApiError {
     ))
 }
 
+#[allow(dead_code)]
 pub fn json_error(e: JsonError) -> ApiError {
     let temp = match e {
         JsonError::Parse(_, error) => format!("{}", error),

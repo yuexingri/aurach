@@ -1,4 +1,3 @@
-use diesel::MysqlConnection;
 use rocket_contrib::json;
 
 use crate::configuration::response::{ApiError, ApiResponse, db_error, success};

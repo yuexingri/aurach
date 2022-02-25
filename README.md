@@ -1,4 +1,4 @@
-## Aurach
+## aurach
 ### integration with mysql via diesel and r2d2 [https://diesel.rs/]
 ### web framework use rocket[https://rocket.rs/]
 ### how to start
