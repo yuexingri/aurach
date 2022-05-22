@@ -1,6 +1,6 @@
 use rocket_contrib::json;
 
-use crate::configuration::response::{ApiError, ApiResponse, db_error, success};
+use crate::configuration::response::{db_error, success, ApiError, ApiResponse};
 use crate::db::mysql_db_pool;
 use crate::model::user_model::User;
 

@@ -20,7 +20,7 @@ impl ResponseSuccess {
     pub fn ok(response: JsonValue) -> Json<ResponseSuccess> {
         Json(ResponseSuccess {
             code: Status::Ok.code,
-            response
+            response,
         })
     }
 }
@@ -40,13 +40,11 @@ pub fn success(result: JsonValue) -> ApiResponse {
 }
 
 pub fn fail(code: u16, error: String, message: String) -> ApiError {
-    ApiError::Bad(Json(
-        ResponseError {
-            message,
-            error,
-            code,
-        }
-    ))
+    ApiError::Bad(Json(ResponseError {
+        message,
+        error,
+        code,
+    }))
 }
 
 #[allow(dead_code)]

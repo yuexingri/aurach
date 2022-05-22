@@ -3,9 +3,9 @@ use std::ops::Deref;
 use diesel::MysqlConnection;
 use dotenv::dotenv;
 use r2d2_diesel::ConnectionManager;
-use rocket::{Request, State};
 use rocket::http::Status;
 use rocket::request::{FromRequest, Outcome};
+use rocket::{Request, State};
 
 pub type Pool = r2d2::Pool<ConnectionManager<MysqlConnection>>;
 
@@ -17,7 +17,9 @@ pub fn connect() -> Pool {
 
     let manager = ConnectionManager::<MysqlConnection>::new(database_url);
 
-    r2d2::Pool::builder().build(manager).expect("Failed to create pool")
+    r2d2::Pool::builder()
+        .build(manager)
+        .expect("Failed to create pool")
 }
 
 pub struct Connection(pub r2d2::PooledConnection<ConnectionManager<MysqlConnection>>);
@@ -30,7 +32,7 @@ impl<'a, 'r> FromRequest<'a, 'r> for Connection {
 
         match pool.get() {
             Ok(conn) => Outcome::Success(Connection(conn)),
-            Err(_) => Outcome::Failure((Status::ServiceUnavailable, ()))
+            Err(_) => Outcome::Failure((Status::ServiceUnavailable, ())),
         }
     }
 }
