@@ -5,3 +5,4 @@
 1. add database_url to src/db/mysql_db_pool.rs
 2. create table `aurach_user` to database
 3. start via main.rs
+> rust should use lightly, like this `rustup default nightly`
