@@ -5,7 +5,7 @@ pub struct StorageObject {
 
 impl StorageObject {
     pub fn new_storage_obj(name: String) -> StorageObject {
-        StorageObject { name: name }
+        StorageObject { name }
     }
 
     pub fn say_hello(&self) {
