@@ -14,6 +14,7 @@ mod model;
 mod service;
 
 fn main() {
+
     rocket::ignite()
         .manage(db::mysql_db_pool::connect())
         .mount("/user", routes![controller::user_controller::get])

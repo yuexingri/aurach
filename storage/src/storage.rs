@@ -1,14 +1,16 @@
 #[derive(Debug)]
 pub struct StorageObject {
-    name: String,
+    key: String,
+    value: String,
 }
 
 impl StorageObject {
-    pub fn new_storage_obj(name: String) -> StorageObject {
-        StorageObject { name }
+    pub fn new_storage_obj(key: String, value: String) -> StorageObject {
+        StorageObject { key, value }
     }
 
-    pub fn say_hello(&self) {
-        println!("say hello from storage {}", self.name);
+    pub fn write(&self) {
+        let key = &self.key;
+        let value = &self.value;
     }
 }
