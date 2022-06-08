@@ -6,3 +6,7 @@
 2. create table `aurach_user` to database
 3. start via main.rs
 > rust should use lightly, like this `rustup default nightly`
+
+// todo
+1. add parquet storage obj
+2. storage and connection abstract
