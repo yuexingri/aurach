@@ -20,7 +20,8 @@ pub fn update_user_by_id(id: i32, name: String, conn: &mysql_db_pool::Connection
     }
 }
 
-pub fn create_user_to_db(user: User, conn: &mysql_db_pool::Connection) -> Result<ApiResponse, ApiError> {
+pub fn create_user_to_db(name: String, conn: &mysql_db_pool::Connection) -> Result<ApiResponse, ApiError> {
+    let user = User { id: Option::None, name: Option::Some(name) };
     let result  = User::create(user, conn);
     match result {
         Ok(r) => Ok(success(json!(r))),

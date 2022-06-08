@@ -12,6 +12,11 @@ pub struct User {
     pub name: Option<String>,
 }
 
+#[derive(Debug, Deserialize)]
+pub struct UserVo {
+    pub name: String,
+}
+
 impl User {
     pub fn create(user: User, conn: &MysqlConnection) -> Result<User, Error> {
         let user = User { ..user };

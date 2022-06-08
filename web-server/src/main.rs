@@ -27,5 +27,6 @@ fn build_user_controller_method_routes_array() -> Vec<Route> {
     routes![
         controller::user_controller::get_by_id,
         controller::user_controller::update_by_id,
+        controller::user_controller::create_user,
     ]
 }
