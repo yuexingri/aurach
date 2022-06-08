@@ -5,6 +5,8 @@ extern crate diesel;
 #[macro_use]
 extern crate rocket;
 
+use rocket::Route;
+
 // use storage::StorageObject;
 
 mod configuration;
@@ -17,6 +19,13 @@ fn main() {
 
     rocket::ignite()
         .manage(db::mysql_db_pool::connect())
-        .mount("/user", routes![controller::user_controller::get])
+        .mount("/user", build_user_controller_method_routes_array())
         .launch();
+}
+
+fn build_user_controller_method_routes_array() -> Vec<Route> {
+    routes![
+        controller::user_controller::get_by_id,
+        controller::user_controller::update_by_id,
+    ]
 }
