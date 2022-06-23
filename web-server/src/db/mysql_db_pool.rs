@@ -12,9 +12,6 @@ pub type Pool = r2d2::Pool<ConnectionManager<MysqlConnection>>;
 pub fn connect() -> Pool {
     dotenv().ok();
 
-    let database_url = "mysql://root:root@123@localhost/aurach";
-    // let database_url = "mysql://root:root@123@localhost/aurach";
-
     let manager = ConnectionManager::<MysqlConnection>::new(database_url);
 
     r2d2::Pool::builder()
