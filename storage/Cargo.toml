@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 parquet = "14.0.0"
+arrow = { version = "14.0.0", default-features = false, features = ["csv", "ipc", "simd"] }

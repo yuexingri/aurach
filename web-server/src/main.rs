@@ -22,6 +22,7 @@ fn main() {
         .manage(db::mysql_db_pool::connect())
         .mount("/user", build_user_controller_method_routes_array())
         .mount("/task_info", build_task_info_controller_method_routes_array())
+        .mount("/kv", build_kv_controller_method_routes_array())
         .launch();
 }
 
@@ -36,5 +37,12 @@ fn build_user_controller_method_routes_array() -> Vec<Route> {
 fn build_task_info_controller_method_routes_array() -> Vec<Route> {
     routes![
         controller::task_info_controller::get_by_id,
+    ]
+}
+
+fn build_kv_controller_method_routes_array() -> Vec<Route> {
+    routes![
+        controller::kv_controller::save,
+        controller::kv_controller::read,
     ]
 }
